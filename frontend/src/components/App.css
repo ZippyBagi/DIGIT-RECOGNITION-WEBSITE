@@ -1,0 +1,26 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(30, 37, 59);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: fit-content;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(30, 37, 59);
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, #853e3e, transparent 1px),
+   linear-gradient(to bottom, #853e3e, transparent 1px);
+  
+}
