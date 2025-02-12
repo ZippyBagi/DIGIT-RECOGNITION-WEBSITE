@@ -6,6 +6,8 @@ from config import app
 from PIL import Image
 import numpy as np
 import scipy as sp
+from flask_cors import cross_origin, CORS
+from flask.helpers import send_from_directory
 
 class MyNeuralNet(nn.Module):
 
@@ -46,11 +48,13 @@ def load_my_data():
     return my_data
 
 @app.route("/value", methods=["GET"])
+@cross_origin()
 def get_value():
     ans = str(nnet.forward(load_my_data()).argmax())[7]
     return jsonify({"value" : ans})
 
 @app.route("/img", methods=["POST"])
+@cross_origin()
 def set_img():
 
     data = request.json
@@ -79,5 +83,7 @@ if __name__ == "__main__":
         load_checkpoint(torch.load("../data/checkpoint.pth.tar"), nnet)
     app.run(debug=False, host="0.0.0.0")
     
-        
-
+@app.route('/')
+@cross_origin()
+def serve():
+    return send_from_directory(app.static_folder,'index.html')
