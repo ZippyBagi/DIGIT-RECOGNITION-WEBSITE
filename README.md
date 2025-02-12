@@ -1,3 +1,10 @@
+
+PREREQUISITES:
+-PYTHON
+-NODE.JS
+-NPM
+
+
 IN ORDER TO RUN::
 
 1.Download the repository
@@ -12,3 +19,4 @@ IN ORDER TO RUN::
   npm run dev
 
 5. CTRL + Click on the link and the website will open!
+
